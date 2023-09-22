@@ -2,124 +2,49 @@
 
 ### Table of Contents
 
--   [Triple][1]
-    -   [triple][2]
-        -   [Parameters][3]
--   [BiggerTriple][4]
-    -   [triple][5]
-        -   [Parameters][6]
--   [Polygon][7]
-    -   [sayName][8]
-    -   [sayHistory][9]
--   [Square][10]
-    -   [area][11]
-    -   [area][12]
-        -   [Parameters][13]
--   [Rectangle][14]
-    -   [sayName][15]
+-   [fumen2Canvas][1]
+    -   [Parameters][2]
+-   [fumen2GIF][3]
+    -   [Parameters][4]
 
-## Triple
+## fumen2Canvas
 
-Description of Triple Class.
+Draw a Fumen page to a canvas
 
-### triple
+### Parameters
 
-Triple the number.
+-   `fumenPage` **Page** Fumen page to draw
+-   `tilesize` **[number][5]** Size of a tile
+-   `numrows` **[number][5]** Number of rows to draw
+-   `transparent` **[boolean][6]** Whether to draw transparently
 
-#### Parameters
+Returns **Canvas** Canvas with the Fumen page drawn on it
 
--   `n` **[Number][16]** A number to triple.
+## fumen2GIF
 
-Returns **[Number][16]** The tripled number.
+Draw a Fumen page to a GIFencoder
 
-## BiggerTriple
+### Parameters
 
-Description of BiggerTriple Class.
+-   `fumenPages` **[Array][7]&lt;Page>** Fumen pages to draw
+-   `tilesize` **[number][5]** Size of a tile
+-   `numrows` **[number][5]** Number of rows to draw
+-   `start` **[number][5]** Page to start drawing from
+-   `end` **[number][5]** Page to stop drawing at
+-   `transparent` **[boolean][6]** Whether to draw transparently
 
-### triple
+Returns **GIFEncoder** GIFencoder with the Fumen pages drawn on it
 
-Triple the number twice.
+[1]: #fumen2canvas
 
-#### Parameters
+[2]: #parameters
 
--   `n` **[Number][16]** A number to triple.
+[3]: #fumen2gif
 
-Returns **[Number][16]** The bigger tripled number
+[4]: #parameters-1
 
-## Polygon
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-Description of Polygon Class.
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
-### sayName
-
-Return name.
-
-Returns **[String][17]** Sample string.
-
-### sayHistory
-
-Return height.
-
-Returns **[String][17]** Sample string.
-
-## Square
-
-Description of Square Class.
-
-### area
-
-Return area.
-
-Returns **[Number][16]** The Area.
-
-### area
-
-Set the area to new number
-
-#### Parameters
-
--   `value` **[Number][16]** A number to use to set value.
-
-## Rectangle
-
-Description of Rectangle Class.
-
-### sayName
-
-Return name.
-
-Returns **[String][17]** Sample string.
-
-[1]: #triple
-
-[2]: #triple-1
-
-[3]: #parameters
-
-[4]: #biggertriple
-
-[5]: #triple-2
-
-[6]: #parameters-1
-
-[7]: #polygon
-
-[8]: #sayname
-
-[9]: #sayhistory
-
-[10]: #square
-
-[11]: #area
-
-[12]: #area-1
-
-[13]: #parameters-2
-
-[14]: #rectangle
-
-[15]: #sayname-1
-
-[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
-[17]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

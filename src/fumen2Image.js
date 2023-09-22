@@ -1,6 +1,6 @@
-const { decoder, Page } = require("tetris-fumen");
-const { createCanvas, Canvas } = require("canvas");
-const fs = require("fs");
+import Page from 'tetris-fumen';
+import { createCanvas, Canvas } from "canvas";
+import fs from "fs";
 
 const colors = {
     I: {
@@ -160,7 +160,7 @@ export function fumen2Canvas(fumenPage, tilesize, numrows, transparent) {
     return canvas;
 }
 
-const GIFEncoder = require("gifencoder");
+import GIFEncoder from 'gifencoder'
 
 /**
  * Draw a Fumen page to a GIFencoder
