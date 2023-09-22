@@ -1,36 +1,26 @@
-// @flow
+import { fumen2Canvas } from "./fumen2Image.js";
+import findAndReplace from 'mdast-util-find-and-replace';
 
-// /**
-//  * This function says hello.
-//  * @param name Some name to say hello for.
-//  * @returns The hello.
-//  */
-// const sayHello = (name: string = "Haz"): string => `Hello, ${name}!`;
+// remark to use fumen2Image
+function fumen2Image() {
+    function replace(fumenBlock) {
+        const fumen = fumenBlock.match[1];
+        const canvas = fumen2Canvas(fumen);
+        const img = canvas.toDataURL();
+        return {
+            type: 'image',
+            url: img,
+            title: 'fumen',
+            alt: 'fumen'
+        };
+    }
+    function transform(markdownAST) {
+        // use fumen{[^{}]+} to match fumen
+        const fumenRegex = /fumen{([^{}]+)}/g;
+        findAndReplace(markdownAST, fumenRegex, replace);
+    }
+    return transform;
+}
 
-// export default sayHello;
+export default fumen2Image;
 
-/**
- * Description of Triple Class.
- * @property {Triple}
- */
-export { Triple } from "./api/Triple";
-/**
- * Description of BiggerTriple Class.
- * @property {BiggerTriple}
- */
-export { BiggerTriple } from "./api/Triple";
-/**
- * Description of Polygon Class.
- * @property {BiggerTriple}
- */
-export { Polygon } from "./api/Polygon";
-/**
- * Description of Square Class.
- * @property {Square}
- */
-export { Square } from "./api/Polygon";
-/**
- * Description of Rectangle Class.
- * @property {Rectangle}
- */
-export { Rectangle } from "./api/Polygon";
