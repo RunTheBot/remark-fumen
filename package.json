@@ -1,9 +1,9 @@
 {
-  "name": "js-module-template",
-  "version": "0.0.2",
-  "description": "My JS/NodeJS module",
+  "name": "remark-fumen",
+  "version": "alpha-0.0.1",
+  "description": "turn fumen data in markdown into images with remark",
   "license": "MIT",
-  "repository": "mitevpi/js-module-template",
+  "repository": "RunTheBot/remark-fumen",
   "type": "module",
   "main": "dist/index.js",
   "author": {

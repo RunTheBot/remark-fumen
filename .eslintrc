@@ -19,5 +19,5 @@
         "semi": ["error", "always"],
         "linebreak-style": "off"
     },
-    "ignorePatterns": ["fumen2Imange.js"]
+    "ignorePatterns": ["fumen2Imange.js", "node_modules/"]
 }
