@@ -1,6 +1,4 @@
-import Page from 'tetris-fumen';
 import { createCanvas, Canvas } from "canvas";
-import fs from "fs";
 
 const colors = {
     I: {

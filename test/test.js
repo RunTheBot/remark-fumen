@@ -10,6 +10,6 @@ const processor = remark()
 
 let input = "fumen{v115@0gAtHeBtGewhAtywCehlwhRpwwR4i0glwhRpR4Ceg0?glwhJeAgH}"
 
-const { contents } = await processor.process(input);
+const test = await processor.process(input);
 
-console.log(contents)
+console.log(test)
