@@ -2,10 +2,22 @@
 
 ### Table of Contents
 
--   [fumen2Canvas][1]
-    -   [Parameters][2]
--   [fumen2GIF][3]
-    -   [Parameters][4]
+*   [replace][1]
+    *   [Parameters][2]
+*   [fumen2Canvas][3]
+    *   [Parameters][4]
+*   [fumen2GIF][5]
+    *   [Parameters][6]
+
+## replace
+
+replace fumen to image
+
+### Parameters
+
+*   `fumenBlock` **[string][7]**&#x20;
+
+Returns **{alt: [string][7], type: [string][7], title: [string][7], url: [string][7]}**&#x20;
 
 ## fumen2Canvas
 
@@ -13,10 +25,10 @@ Draw a Fumen page to a canvas
 
 ### Parameters
 
--   `fumenPage` **Page** Fumen page to draw
--   `tilesize` **[number][5]** Size of a tile
--   `numrows` **[number][5]** Number of rows to draw
--   `transparent` **[boolean][6]** Whether to draw transparently
+*   `fumenPage` **Page** Fumen page to draw
+*   `tilesize` **[number][8]** Size of a tile
+*   `transparent` **[boolean][9]** Whether to draw transparently
+*   `numrows` **[number][8]** Number of rows to draw
 
 Returns **Canvas** Canvas with the Fumen page drawn on it
 
@@ -26,25 +38,31 @@ Draw a Fumen page to a GIFencoder
 
 ### Parameters
 
--   `fumenPages` **[Array][7]&lt;Page>** Fumen pages to draw
--   `tilesize` **[number][5]** Size of a tile
--   `numrows` **[number][5]** Number of rows to draw
--   `start` **[number][5]** Page to start drawing from
--   `end` **[number][5]** Page to stop drawing at
--   `transparent` **[boolean][6]** Whether to draw transparently
+*   `fumenPages` **[Array][10]\<Page>** Fumen pages to draw
+*   `tilesize` **[number][8]** Size of a tile
+*   `numrows` **[number][8]** Number of rows to draw
+*   `start` **[number][8]** Page to start drawing from
+*   `end` **[number][8]** Page to stop drawing at
+*   `transparent` **[boolean][9]** Whether to draw transparently
 
 Returns **GIFEncoder** GIFencoder with the Fumen pages drawn on it
 
-[1]: #fumen2canvas
+[1]: #replace
 
 [2]: #parameters
 
-[3]: #fumen2gif
+[3]: #fumen2canvas
 
 [4]: #parameters-1
 
-[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[5]: #fumen2gif
 
-[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[6]: #parameters-2
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array

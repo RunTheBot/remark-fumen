@@ -1,15 +1,14 @@
 {
   "name": "remark-fumen",
-  "version": "alpha-0.0.1",
-  "description": "turn fumen data in markdown into images with remark",
+  "version": "0.0.1",
+  "description": "turns fumen data in markdown into images with remark",
   "license": "MIT",
   "repository": "RunTheBot/remark-fumen",
   "type": "module",
   "main": "dist/index.js",
   "author": {
-    "name": "Petr Mitev",
-    "email": "p.mitevpi@gmail.com",
-    "url": "https://mitevpi.com/"
+    "name": "RunTheBot",
+    "email": "runthebot@gmail.com"
   },
   "files": [
     "dist",
