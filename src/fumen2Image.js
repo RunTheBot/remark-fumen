@@ -69,97 +69,69 @@ const colors = {
  * @param {boolean} transparent Whether to draw transparently
  * @returns {Canvas} Canvas with the Fumen page drawn on it
  */
-export function fumen2Canvas(fumenPage, tilesize, numrows, transparent) {
-    const { field } = fumenPage;
-    const { operation } = fumenPage;
+export function fumen2Canvas(fumenPage, tilesize, transparent, numrows) {
+
+    const field = fumenPage.field
+    const operation = fumenPage.operation
 
     function operationFilter(e) {
-        return i == e.x && j == e.y;
+        return i == e.x && j == e.y
     }
 
-    if (numrows == undefined) {
+    if(numrows == undefined) {
         numrows = 0;
-        for (let i = 0; i < 10; i++) {
-            for (let j = 0; j < 23; j++) {
-                if (field.at(i, j) != "_") {
+        for(let i = 0; i < 10; i++) {
+            for(let j = 0; j < 23; j++) {
+                if(field.at(i,j) != '_') {
                     numrows = Math.max(numrows, j);
                 }
-                if (
-                    operation != undefined &&
-                    operation.positions().filter(operationFilter).length > 0
-                ) {
+                if(operation != undefined && operation.positions().filter(operationFilter).length > 0) {
                     numrows = Math.max(numrows, j);
                 }
             }
         }
-        numrows += 2;
+        numrows+=2
     }
-    const width = tilesize * 10;
-    const height = numrows * tilesize;
+    const width = tilesize*10;
+    const height = numrows*tilesize;
 
     const canvas = createCanvas(width, height);
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
 
-    if (!transparent) {
-        context.fillStyle = colors.Empty.normal;
-    } else {
-        context.fillStyle = "rgba(0, 0, 0, 0)";
+    if(!transparent) {
+        context.fillStyle = colors['Empty'].normal
+    }
+    else {
+        context.fillStyle = 'rgba(0, 0, 0, 0)'
     }
     context.fillRect(0, 0, width, height);
 
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < numrows; j++) {
-            if (field.at(i, j) != "_") {
-                context.fillStyle = colors[field.at(i, j)].light;
-                context.fillRect(
-                    i * tilesize,
-                    height - (j + 1) * tilesize - tilesize / 5,
-                    tilesize,
-                    tilesize + tilesize / 5
-                );
+    for(let i = 0; i < 10; i++) {
+        for(let j = 0; j < numrows; j++) {
+            if(field.at(i,j) != '_') {
+                context.fillStyle = colors[field.at(i,j)].light
+                context.fillRect(i*tilesize, height-(j+1)*tilesize-tilesize/5, tilesize, tilesize+tilesize/5)
             }
-            if (
-                operation != undefined &&
-                operation.positions().filter(operationFilter).length > 0
-            ) {
-                context.fillStyle = colors[operation.type].light;
-                context.fillRect(
-                    i * tilesize,
-                    height - (j + 1) * tilesize - tilesize / 5,
-                    tilesize,
-                    tilesize + tilesize / 5
-                );
+            if(operation != undefined && operation.positions().filter(operationFilter).length > 0) {
+                context.fillStyle = colors[operation.type].light
+                context.fillRect(i*tilesize, height-(j+1)*tilesize-tilesize/5, tilesize, tilesize+tilesize/5)
             }
         }
     }
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < numrows; j++) {
-            if (field.at(i, j) != "_") {
-                context.fillStyle = colors[field.at(i, j)].normal;
-                context.fillRect(
-                    i * tilesize,
-                    height - (j + 1) * tilesize,
-                    tilesize,
-                    tilesize
-                );
+    for(let i = 0; i < 10; i++) {
+        for(let j = 0; j < numrows; j++) {
+            if(field.at(i,j) != '_') {
+                context.fillStyle = colors[field.at(i,j)].normal
+                context.fillRect(i*tilesize, height-(j+1)*tilesize, tilesize, tilesize)
             }
-            if (
-                operation != undefined &&
-                operation.positions().filter(operationFilter).length > 0
-            ) {
-                context.fillStyle = colors[operation.type].normal;
-                context.fillRect(
-                    i * tilesize,
-                    height - (j + 1) * tilesize,
-                    tilesize,
-                    tilesize
-                );
+            if(operation != undefined && operation.positions().filter(operationFilter).length > 0) {
+                context.fillStyle = colors[operation.type].normal
+                context.fillRect(i*tilesize, height-(j+1)*tilesize, tilesize, tilesize)
             }
         }
     }
     return canvas;
 }
-
 import GIFEncoder from 'gifencoder'
 
 /**
