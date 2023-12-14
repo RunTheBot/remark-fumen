@@ -1,6 +1,6 @@
 {
   "name": "remark-fumen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "turns fumen data in markdown into images with remark",
   "license": "MIT",
   "repository": "RunTheBot/remark-fumen",

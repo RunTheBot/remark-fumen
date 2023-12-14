@@ -1,16 +1,17 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "node": 6
-        }
-      }
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "6.10"
+                },
+                "modules": false
+            }
+        ],
+        "@babel/preset-flow"
     ],
-    "@babel/preset-flow"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties"
-  ]
+    "plugins": [
+        "@babel/plugin-proposal-class-properties"
+    ]
 }

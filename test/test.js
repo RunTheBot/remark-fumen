@@ -1,7 +1,7 @@
 import rehypeStringify from 'rehype-stringify';
 import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
-import plugin from '../src/index.js'
+import plugin from '../dist/index.js'
 
 const processor = remark()
     .use(plugin)
