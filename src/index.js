@@ -21,7 +21,7 @@ function fumen2Image() {
         const pages = decoder.decode(fumen);
         const canvas = fumen2Canvas(pages[0], 32, true);
         const img = canvas.toDataURL();
-        console.log(img);
+        // console.log(img);
         return {
             type: 'image',
             url: img,
