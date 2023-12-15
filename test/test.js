@@ -8,7 +8,7 @@ const processor = remark()
     .use(remarkRehype)
     .use(rehypeStringify)
 
-let input = "fumen{v115@0gAtHeBtGewhAtywCehlwhRpwwR4i0glwhRpR4Ceg0?glwhJeAgH}"
+let input = "fumen(v115@0gAtHeBtGewhAtywCehlwhRpwwR4i0glwhRpR4Ceg0?glwhJeAgH)"
 
 const test = await processor.process(input);
 

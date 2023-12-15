@@ -30,9 +30,9 @@ function fumen2Image() {
         };
     }
     function transform(markdownAST) {
-        // use fumen{[^{}]+} to match fumen
-        const fumenRegex = /fumen{([^{}]+)}/g;
-        findAndReplace(markdownAST, [/fumen{[^{}]+}/g, replace]);
+        // use fumen\(([^{}]+)\) to match fumen
+        const fumenRegex = /fumen\(([^{}]+)\)/g;
+        findAndReplace(markdownAST, [fumenRegex, replace]);
         return markdownAST;
     }
     return transform;
